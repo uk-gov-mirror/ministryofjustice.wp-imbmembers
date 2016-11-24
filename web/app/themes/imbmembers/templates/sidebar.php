@@ -37,6 +37,16 @@ else {
     Add <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
   </a>
 </section>
+<section class="widget widget_menu">
+  <?php
+
+  wp_nav_menu(array(
+    'theme_location' => 'primary_navigation',
+    'menu_class' => 'tree'
+  ));
+
+  ?>
+</section>
 <section class="widget widget_archives">
   <h3>Monthly Archives</h3>
   <div class="panel-group" id="archive" role="tablist" aria-multiselectable="true">

@@ -23,6 +23,12 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
+
+        var menu = new TreeNav({
+          tree: $('.tree'),
+          toggleButtonHtml: '<a href="#" class="toggle-children">&gt;</a>',
+          animateSpeed: 150
+        });
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired

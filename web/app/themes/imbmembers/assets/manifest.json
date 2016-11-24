@@ -2,6 +2,7 @@
   "dependencies": {
     "main.js": {
       "files": [
+        "scripts/components/*.js",
         "scripts/main.js"
       ],
       "main": true
@@ -30,6 +31,6 @@
     }
   },
   "config": {
-    "devUrl": "knowthething.dev"
+    "devUrl": "imbmembers.dev"
   }
 }

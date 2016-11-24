@@ -1,0 +1,45 @@
+.tree {
+  margin: 0;
+  padding: 0;
+
+  &, ul {
+    list-style: none;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0 0 0 1em;
+  }
+
+  li {
+    &:before {
+      content: '';
+      display: block;
+      float: left;
+      width: 1em;
+      height: 1em;
+      margin-right: 0.3em;
+    }
+    &.has-children:before {
+      display: none;
+    }
+  }
+}
+
+.toggle-children {
+  text-decoration: none;
+  color: black;
+  display: block;
+  float: left;
+  margin-right: 0.3em;
+  transform: rotate(0deg);
+  transition: transform 0.15s linear;
+  background: orange;
+  width: 1em;
+  height: 1em;
+  text-align: center;
+
+  .expanded > & {
+    transform: rotate(90deg);
+  }
+}
