@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "757591c0b134392030a44ee0b24a01cb",
-    "content-hash": "857f75e317ef639d09c303283bdbcfab",
+    "hash": "fd7c050f39d2ed44af23df8d40d408ea",
+    "content-hash": "137e169b355adef33507c6c52361044b",
     "packages": [
         {
             "name": "composer/installers",
@@ -284,6 +284,26 @@
                 "environment"
             ],
             "time": "2014-10-16 14:50:21"
+        },
+        {
+            "name": "wpackagist-plugin/wp-nested-pages",
+            "version": "1.6.5.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-nested-pages/",
+                "reference": "tags/1.6.5.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-nested-pages.1.6.5.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-nested-pages/"
         }
     ],
     "packages-dev": [],

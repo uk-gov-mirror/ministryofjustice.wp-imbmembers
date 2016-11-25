@@ -44,7 +44,8 @@
     "composer/installers": "~1.0.12",
     "vlucas/phpdotenv": "~1.0.9",
     "johnpbloch/wordpress": "4.6.*",
-    "roots/soil": "3.0.3"
+    "roots/soil": "3.0.3",
+    "wpackagist-plugin/wp-nested-pages": "1.6.5.1"
   },
   "extra": {
     "installer-paths": {
