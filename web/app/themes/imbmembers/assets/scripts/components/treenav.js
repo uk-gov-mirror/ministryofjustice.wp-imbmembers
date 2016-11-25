@@ -1,32 +1,35 @@
 function TreeNav(options) {
   this.tree = $(options.tree);
-  this.toggleButtonHtml = options.toggleButtonHtml || '<a href="#" class="toggle-children">&gt;</a>';
   this.animateSpeed = (typeof options.animateSpeed === 'number') ? options.animateSpeed : 5000;
 
   this.init();
-  this.showActiveBranches();
 }
 
 TreeNav.prototype = {
   init: function() {
+    this.tree.removeClass('tree-no-js');
+    this.closeAllBranches();
+    this.showActiveBranches();
+    this.bindEvents();
+  },
+  closeAllBranches: function() {
     var _this = this;
     $(this.getAllBranches()).each(function(i, branch) {
-      $(branch).addClass('has-children');
-      _this.addBranchToggle(branch);
       _this.closeBranch(branch);
     });
   },
-  addBranchToggle: function(branch) {
+  bindEvents: function() {
     var _this = this;
-    var toggle = $(this.toggleButtonHtml)
-      .on('click', function(e) {
-        e.preventDefault();
-        _this.toggleBranch(branch);
-      });
-    $(branch).prepend(toggle);
+    $(this.getAllBranches()).each(function(i, branch) {
+      $(branch).find('> .toggle-children')
+        .on('click', function(e) {
+          e.preventDefault();
+          _this.toggleBranch(branch);
+        });
+    });
   },
   getBranches: function(rootBranch) {
-    return $(rootBranch).find('li:has(>ul)');
+    return $(rootBranch).find('li.has-children');
   },
   getAllBranches: function() {
     return this.getBranches(this.tree);

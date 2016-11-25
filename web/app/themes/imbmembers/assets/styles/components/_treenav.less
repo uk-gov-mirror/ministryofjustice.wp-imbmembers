@@ -6,40 +6,69 @@
     list-style: none;
   }
 
+  &.tree-no-js ul {
+    display: none;
+  }
+  &.tree-no-js .has-children.active > ul {
+    display: block;
+  }
+
+  ul, li {
+    clear: left;
+    overflow: hidden;
+  }
+
   ul {
-    margin: 0;
-    padding: 0 0 0 1em;
+    margin: 0 0 0 0.9em;
+    padding: 0;
+    border-left: 1px dotted rgba(255, 255, 255, 0.4);
   }
 
   li {
-    &:before {
-      content: '';
-      display: block;
-      float: left;
-      width: 1em;
-      height: 1em;
-      margin-right: 0.3em;
+    margin-left: 1.8em;
+    &.has-children {
+      margin-left: 0;
     }
-    &.has-children:before {
-      display: none;
+    &.expanded > ul {
+      background-color: rgba(0, 0, 0, 0.15);
     }
+  }
+
+  .tree-link {
+    display: block;
+    padding: 0.6em;
+    float: left;
+  }
+
+  .active > .tree-link {
+    color: @brand-primary;
+  }
+
+  a {
+    color: @panel-dark-text;
   }
 }
 
 .toggle-children {
   text-decoration: none;
-  color: black;
   display: block;
   float: left;
-  margin-right: 0.3em;
-  transform: rotate(0deg);
-  transition: transform 0.15s linear;
-  background: orange;
-  width: 1em;
-  height: 1em;
+  width: 1.8em;
   text-align: center;
+  padding: 0.6em 0;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  > i {
+    transform: rotate(0deg);
+    transition: transform 0.15s linear;
+  }
 
   .expanded > & {
-    transform: rotate(90deg);
+    > i {
+      transform: rotate(90deg);
+    }
   }
 }
