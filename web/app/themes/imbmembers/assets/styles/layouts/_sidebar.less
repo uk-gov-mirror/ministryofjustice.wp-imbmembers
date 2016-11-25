@@ -14,16 +14,7 @@
 /* Small devices (tablets, 768px and up) */
 @media (min-width: @screen-sm-min) {
   .sidebar {
-    display: flex;
-    flex-direction: column;
-
-    .widget {
-      flex: 0 0 auto;
-    }
-    .widget_menu {
-      flex: 1 1 auto;
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
-    }
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }

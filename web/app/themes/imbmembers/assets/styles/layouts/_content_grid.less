@@ -1,0 +1,31 @@
+.content_grid {
+}
+
+.sidebar {
+  display: none;
+}
+
+@media (min-width: @screen-sm-min) {
+  .sidebar {
+    display: block;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    bottom: 0;
+    width: 260px;
+  }
+
+  .main {
+    margin-left: 260px;
+  }
+}
+
+@media (min-width: @screen-md-min) {
+  .sidebar {
+    width: 320px;
+  }
+
+  .main {
+    margin-left: 320px;
+  }
+}
