@@ -7,10 +7,14 @@ function TreeNav(options) {
 
 TreeNav.prototype = {
   init: function() {
-    this.tree.removeClass('tree-no-js');
     this.closeAllBranches();
     this.showActiveBranches();
     this.bindEvents();
+    this.removeNoJsClasses();
+  },
+  removeNoJsClasses: function() {
+    this.tree.removeClass('tree-no-js');
+    this.tree.find('.has-active').removeClass('has-active');
   },
   closeAllBranches: function() {
     var _this = this;

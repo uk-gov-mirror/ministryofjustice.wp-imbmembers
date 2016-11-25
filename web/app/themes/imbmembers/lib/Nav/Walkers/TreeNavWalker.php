@@ -27,7 +27,7 @@ class TreeNavWalker extends Walker_Nav_Menu {
     $item_html = preg_replace('/<a (.*?)>/', '<a $1 class="' . implode(' ', $link_classes) . '">', $item_html);
 
     if ($item->is_dropdown) {
-      $item_html = preg_replace('/<a (.*?)>/', '<a href="#" class="toggle-children"><i class="fa fa-caret-right" aria-hidden="true"></i></a><a $1>', $item_html);
+      $item_html = preg_replace('/<a (.*?)>/', '<a href="' . $item->url . '" class="toggle-children"><i class="fa fa-caret-right" aria-hidden="true"></i></a><a $1>', $item_html);
     }
 
     $output .= $item_html;
@@ -38,18 +38,6 @@ class TreeNavWalker extends Walker_Nav_Menu {
 
     if ($element->is_dropdown) {
       $element->classes[] = 'has-children';
-
-      foreach ($children_elements[$element->ID] as $child) {
-        if ($child->current_item_parent || Utils\url_compare($this->archive, $child->url)) {
-//          $element->classes[] = 'active';
-        }
-      }
-    }
-
-    $element->is_active = strpos($this->archive, $element->url);
-
-    if ($element->is_active) {
-//      $element->classes[] = 'active';
     }
 
     parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
@@ -60,14 +48,13 @@ class TreeNavWalker extends Walker_Nav_Menu {
 
     if ($this->cpt) {
       $classes = str_replace('current_page_parent', '', $classes);
-
-      if (Utils\url_compare($this->archive, $item->url)) {
-//        $classes[] = 'active';
-      }
     }
 
     $classes = str_replace('current-menu-item', 'active', $classes);
-    $classes = preg_replace('/(current(-menu-|[-_]page[-_])(item|parent|ancestor))/', 'disableactive', $classes);
+    if (in_array('active', $classes)) {
+      $classes[] = 'has-active';
+    }
+    $classes = preg_replace('/(current(-menu-|[-_]page[-_])(parent|ancestor))/', 'has-active', $classes);
     $classes = preg_replace('/^((menu|page)[-_\w+]+)+/', '', $classes);
 
     $classes[] = 'menu-' . $slug;
