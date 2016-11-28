@@ -1,3 +1,6 @@
+<div class="search">
+  <?php get_template_part('templates/searchform'); ?>
+</div>
 <nav class="widget widget_menu">
   <?php
 

@@ -3,17 +3,26 @@
 <header class="banner navbar navbar-default navbar-fixed-top" role="banner">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only"><?= __('Toggle navigation', 'sage'); ?></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+
+      <button type="button" class="menu-toggle">
+        <div class="menu-toggle__hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-toggle__cross">
+          <span></span>
+          <span></span>
+        </div>
       </button>
+
       <a class="navbar-brand" href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
     </div>
 
     <nav class="collapse navbar-collapse" role="navigation">
-      <?php get_template_part('templates/searchform'); ?>
+      <div class="navbar-form navbar-right">
+        <?php get_template_part('templates/searchform'); ?>
+      </div>
     </nav>
   </div>
 </header>

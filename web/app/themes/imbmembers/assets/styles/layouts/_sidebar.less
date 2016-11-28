@@ -1,6 +1,8 @@
 .sidebar {
   background: @bg-secondary;
   padding: 10px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 
   .widget {
     padding: 10px 0;
@@ -8,13 +10,5 @@
     h3 {
       color: #fff;
     }
-  }
-}
-
-/* Small devices (tablets, 768px and up) */
-@media (min-width: @screen-sm-min) {
-  .sidebar {
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
   }
 }

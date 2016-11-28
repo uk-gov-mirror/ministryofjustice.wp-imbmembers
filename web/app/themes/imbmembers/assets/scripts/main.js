@@ -31,6 +31,12 @@
           tree: $('.tree'),
           animateSpeed: 150
         });
+
+        $('.menu-toggle').on('click', function(e) {
+          e.preventDefault();
+          $(this).toggleClass('open');
+          $('.sidebar').toggleClass('visible');
+        });
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
