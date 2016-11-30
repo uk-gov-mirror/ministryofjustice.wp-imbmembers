@@ -4,7 +4,7 @@
   <div class="container">
     <div class="navbar-header">
 
-      <button type="button" class="menu-toggle">
+      <button type="button" class="sidebar-toggle menu-toggle">
         <div class="menu-toggle__hamburger">
           <span></span>
           <span></span>

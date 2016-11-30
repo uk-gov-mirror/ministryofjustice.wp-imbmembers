@@ -24,15 +24,12 @@
       init: function() {
         // JavaScript to be fired on all pages
 
-        // $('.navbar-collapse').append('<div class="mobile-tree-nav"></div>');
-        // $('.tree').clone().appendTo('.mobile-tree-nav');
-
         new TreeNav({
           tree: $('.tree'),
           animateSpeed: 150
         });
 
-        $('.menu-toggle').on('click', function(e) {
+        $('.sidebar-toggle').on('click', function(e) {
           e.preventDefault();
           $(this).toggleClass('open');
           $('.sidebar').toggleClass('visible');
