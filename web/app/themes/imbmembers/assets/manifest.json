@@ -13,11 +13,6 @@
       ],
       "main": true
     },
-    "wp-login.css": {
-      "files": [
-        "styles/wp-login.less"
-      ]
-    },
     "editor-style.css": {
       "files": [
         "styles/editor-style.less"
