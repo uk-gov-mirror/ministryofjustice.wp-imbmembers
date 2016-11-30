@@ -27,7 +27,7 @@ class TreeNavWalker extends Walker_Nav_Menu {
     $item_html = preg_replace('/<a (.*?)>/', '<a $1 class="' . implode(' ', $link_classes) . '">', $item_html);
 
     if ($item->is_dropdown) {
-      $item_html = preg_replace('/<a (.*?)>/', '<a href="' . $item->url . '" class="toggle-children"><i class="fa fa-caret-right" aria-hidden="true"></i></a><a $1>', $item_html);
+      $item_html = preg_replace('/<a (.*?)>/', '<a href="' . $item->url . '" class="toggle-children"><i class="glyphicon glyphicon-menu-right" aria-hidden="true"></i></a><a $1>', $item_html);
     }
 
     $output .= $item_html;
