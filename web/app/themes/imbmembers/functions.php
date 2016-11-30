@@ -22,9 +22,7 @@ $sage_includes = [
   'lib/gallery.php',               // Custom [gallery] modifications
   'lib/extras.php',                // Custom functions
   'lib/comments.php',              // Commenting functionality
-  'lib/users/oauth.php',           // Google oAuth login
-  'lib/users/login.php',           // User login
-  'lib/users/registration.php',    // User registration
+  'lib/login.php',                 // Changes to login functionality
 ];
 
 foreach ($sage_includes as $file) {

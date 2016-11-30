@@ -1,6 +1,9 @@
 <?php
 
-namespace Roots\Sage\Users\Login;
+/**
+ * Tweaks to wp-login pages
+ */
+namespace Roots\Sage\Login;
 
 /**
  * Custom scripts and styles for login pages
@@ -8,11 +11,6 @@ namespace Roots\Sage\Users\Login;
 function login_head() {
   ?>
   <style>
-    /* Hide the 'Username' field on the registration form */
-    #registerform #user_login {
-      display: none;
-    }
-
     /* Login header logo */
     #login h1 a, .login h1 a {
       text-indent: 0;
@@ -21,6 +19,11 @@ function login_head() {
       height: auto;
       color: #000;
       font-weight: bold;
+    }
+
+    /* Hide 'back to blog' link */
+    #backtoblog {
+      display: none;
     }
   </style>
 
@@ -31,16 +34,6 @@ function login_head() {
       if (user_login.length > 0 && user_login.attr('type') == 'text') {
         user_login.attr('type', 'email');
         user_login.parents('form').attr('novalidate', true);
-      }
-
-      // Remove 'username' field from registration form
-      var register_form = $('#registerform');
-      if (register_form.length > 0) {
-        // Hide 'Username' field
-        $('#user_login').parents('p').remove();
-
-        // Pass a hidden parameter for detection in the registration routine
-        register_form.prepend('<input type="hidden" value="1" name="user_login_is_email" />');
       }
     });
   </script>
@@ -82,8 +75,8 @@ function login_form_gettext($translated_text, $text, $domain) {
       $translated_text = '<strong>ERROR</strong>: Enter an email address.';
       break;
 
-    case 'Register For This Site':
-      $translated_text = 'Register For This Site<br/><br/>If you have a MOJ Digital Google account, simply log in with Google. No need to register.';
+    case 'Please enter your username or email address. You will receive a link to create a new password via email.':
+      $translated_text = 'Please enter your email address. You will receive a link to create a new password via email.';
       break;
   }
 
@@ -104,3 +97,25 @@ function login_header_link_title() {
   return '';
 }
 add_filter( 'login_headertitle', __NAMESPACE__ . '\\login_header_link_title' );
+
+/**
+ * Require users to be logged in before seeing the site
+ * Redirect to login screen if they're not authenticated
+ */
+function require_login() {
+  if (!is_user_logged_in() && !is_login_page()) {
+    $redirectAfterLogin = $_SERVER['REQUEST_URI'];
+    $redirectTo = wp_login_url($redirectAfterLogin);
+    header('Location: ' . $redirectTo); exit();
+  }
+}
+add_action('init', __NAMESPACE__ . '\\require_login');
+
+/**
+ * Convenience method to determine if we're on a login page.
+ *
+ * @return bool
+ */
+function is_login_page() {
+  return in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php'));
+}

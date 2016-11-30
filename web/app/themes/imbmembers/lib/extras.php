@@ -35,19 +35,6 @@ function excerpt_more() {
 add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
 
 /**
- * [force_login description]
- * @return [type] [description]
- */
-function force_login() {
-  global $wp;
-  $parts = explode("/", $wp->request);
-  if($parts[0] != 'auth' && $wp->request != 'callback') {
-    is_user_logged_in() || auth_redirect();
-  }
-}
-add_action( 'parse_request', __NAMESPACE__ . '\\force_login', 1 );
-
-/**
  * Filter media library items to those belonging to the current user,
  * if the user cannot edit others' posts.
  *
@@ -61,21 +48,6 @@ function limit_media_library_to_own_items($wp_query) {
   return $wp_query;
 }
 add_filter('parse_query', __NAMESPACE__ . '\\limit_media_library_to_own_items');
-
-/**
- * Hide "Back to Know The Thing"
- * @return void
- */
-function hide_backtoblog() {
-  ?>
-  <style>
-    #backtoblog {
-      display: none;
-    }
-  </style>
-  <?php
-}
-add_action('login_head',  __NAMESPACE__ . '\\hide_backtoblog');
 
 /**
  * Configure 'Force Strong Passwords' plugin to only enforce
