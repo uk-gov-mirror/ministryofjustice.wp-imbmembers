@@ -13,6 +13,6 @@ $attr_title = $datetime->format(get_option('date_format')) . ' at ' . $datetime-
 <div class="entry-meta">
   <time class="updated" datetime="<?= $attr_datetime; ?>" title="<?= $attr_title; ?>">
     <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-    <?= $human_date; ?>
+    Posted <?= $human_date; ?>
   </time>
 </div>

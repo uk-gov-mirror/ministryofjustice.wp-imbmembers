@@ -12,6 +12,7 @@
 $sage_includes = [
   'lib/utils.php',                 // Utility functions
   'lib/Nav/Walkers/TreeNavWalker.php', // Tree Nav Walker class
+  'lib/Nav/Breadcrumbs.php',       // Breadcrumbs class
   'lib/init.php',                  // Initial theme setup and constants
   'lib/wrapper.php',               // Theme wrapper class
   'lib/conditional-tag-check.php', // ConditionalTagCheck class

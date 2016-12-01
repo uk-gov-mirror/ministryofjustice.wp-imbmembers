@@ -286,6 +286,17 @@ function nicer_archive_title($title) {
     $title = get_the_date(_x('Y', 'yearly archives date format'));
   }
 
-  return $title;
+  return 'News from ' . $title;
 }
 add_filter('get_the_archive_title', __NAMESPACE__ . '\\nicer_archive_title');
+
+/**
+ * Filter HTML output of Breadcrumb Trail plugin to make them use the
+ * bootstrap breadcrumbs component.
+ */
+function make_breadcrumbs_bootstrap($html) {
+  $html = str_replace('<h2 class="trail-browse"></h2>', '', $html);
+  $html = str_replace('<ul class="trail-items"', '<ol class="trail-items breadcrumb"', $html);
+  return $html;
+}
+add_filter('breadcrumb_trail', __NAMESPACE__ . '\\make_breadcrumbs_bootstrap');

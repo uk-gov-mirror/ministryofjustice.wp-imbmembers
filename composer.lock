@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fd7c050f39d2ed44af23df8d40d408ea",
-    "content-hash": "137e169b355adef33507c6c52361044b",
+    "hash": "8f681692c2c357517025512a1e40dcbf",
+    "content-hash": "30a7410cbeb2272df79f70465a5d8f0e",
     "packages": [
         {
             "name": "composer/installers",
@@ -284,6 +284,26 @@
                 "environment"
             ],
             "time": "2014-10-16 14:50:21"
+        },
+        {
+            "name": "wpackagist-plugin/breadcrumb-trail",
+            "version": "1.0.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/breadcrumb-trail/",
+                "reference": "tags/1.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/breadcrumb-trail.1.0.0.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/breadcrumb-trail/"
         },
         {
             "name": "wpackagist-plugin/wp-nested-pages",

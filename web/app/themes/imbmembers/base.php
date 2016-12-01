@@ -31,6 +31,7 @@ if($parts[0] != 'auth' && $wp->request != 'callback'):
           </aside><!-- /.sidebar -->
         <?php endif; ?>
         <main class="main" role="main">
+          <?php get_template_part('templates/breadcrumbs'); ?>
           <?php include Wrapper\template_path(); ?>
         </main><!-- /.main -->
       </div><!-- /.content -->
