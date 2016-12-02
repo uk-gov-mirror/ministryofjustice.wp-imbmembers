@@ -4,7 +4,13 @@ namespace Roots\Sage\Extras;
 
 use Roots\Sage\Config;
 
-add_filter('show_admin_bar', '__return_false');
+/**
+ * Don't show admin bar for subscribers.
+ */
+function show_admin_bar() {
+  return !current_user_can('subscriber');
+}
+add_filter('show_admin_bar', __NAMESPACE__ . '\\show_admin_bar');
 
 /**
  * Add <body> classes
@@ -95,13 +101,16 @@ function wrap_embed_with_div($html) {
 }
 add_filter('embed_oembed_html', __NAMESPACE__ . '\\wrap_embed_with_div');
 
-function no_mo_dashboard() {
-  $url = parse_url(admin_url( ));
-  if (!current_user_can('manage_options') && $_SERVER['DOING_AJAX'] != $url['path'] . 'admin-ajax.php') {
-  wp_redirect(home_url()); exit;
+/**
+ * Don't allow subscribers to access wp-admin
+ */
+function disable_wp_admin_for_subscribers() {
+  if (current_user_can('subscriber') && (!defined('DOING_AJAX') || !DOING_AJAX)) {
+    wp_redirect(home_url());
+    exit;
   }
 }
-//add_action('admin_init', __NAMESPACE__ . '\\no_mo_dashboard');
+add_action('admin_init', __NAMESPACE__ . '\\disable_wp_admin_for_subscribers');
 
 /**
  * Show all posts at once for archive and search results pages.
