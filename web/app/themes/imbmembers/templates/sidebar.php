@@ -13,3 +13,6 @@
 
   ?>
 </nav>
+<div class="widget widget_logout hidden-md hidden-lg hidden-sm">
+  <a href="<?= wp_logout_url(); ?>" class="btn btn-block btn-link"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</a>
+</div>

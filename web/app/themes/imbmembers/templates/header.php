@@ -23,6 +23,9 @@
       <div class="navbar-form navbar-right">
         <?php get_template_part('templates/searchform'); ?>
       </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="<?= wp_logout_url(); ?>">Logout</a></li>
+      </ul>
     </nav>
   </div>
 </header>

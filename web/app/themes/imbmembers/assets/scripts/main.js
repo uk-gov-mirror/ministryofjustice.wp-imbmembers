@@ -33,6 +33,7 @@
           e.preventDefault();
           $(this).toggleClass('open');
           $('.sidebar').toggleClass('visible');
+          $('body').toggleClass('no-scroll');
         });
       },
       finalize: function() {
