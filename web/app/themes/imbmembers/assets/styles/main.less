@@ -1,25 +1,21 @@
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
 // bower:less
-@import "../../bower_components/bootstrap/less/bootstrap.less";
 // endbower
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
+//@import "../../bower_components/bootstrap/less/bootstrap.less"; // Full-fat bootstrap
+@import "common/bootstrap-custom"; // Low-fat bootstrap
+
 @import "common/_variables";
 @import "common/_global";
-@import "components/_buttons";
-@import "components/_comments";
-@import "components/_forms";
-@import "components/_menu-toggle";
-@import "components/_entry";
-@import "components/_breadcrumb";
 @import "layouts/_content_grid";
-@import "components/_wp-classes";
-@import "components/_page-header";
-@import "components/_panels";
-@import "components/_treenav";
 @import "layouts/_header";
 @import "layouts/_sidebar";
-@import "layouts/_footer";
-@import "layouts/_pages";
-@import "layouts/_posts";
+@import "components/_breadcrumb";
+//@import "components/_comments"; // Unused
+@import "components/_entry";
+@import "components/_menu-toggle";
+@import "components/_page-header";
+@import "components/_treenav";
+@import "components/_wp-classes";

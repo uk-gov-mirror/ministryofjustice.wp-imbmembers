@@ -41,21 +41,6 @@ function excerpt_more() {
 add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
 
 /**
- * Filter media library items to those belonging to the current user,
- * if the user cannot edit others' posts.
- *
- * @param $wp_query
- * @return mixed
- */
-function limit_media_library_to_own_items($wp_query) {
-  if (is_admin() && $wp_query->get('post_type') == 'attachment' && !current_user_can('edit_others_posts')) {
-      $wp_query->set('author', get_current_user_id());
-  }
-  return $wp_query;
-}
-add_filter('parse_query', __NAMESPACE__ . '\\limit_media_library_to_own_items');
-
-/**
  * Configure 'Force Strong Passwords' plugin to only enforce
  * strong passwords for users with the returned capabilities.
  *

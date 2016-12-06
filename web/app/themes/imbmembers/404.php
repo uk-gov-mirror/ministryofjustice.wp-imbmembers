@@ -4,9 +4,7 @@
       <h1 class="entry-title">Page Not Found</h1>
     </header>
     <div class="entry-content">
-      <div class="alert alert-warning">
-        Sorry, but we couldn't find the page that you're looking for.
-      </div>
+      <div class="alert alert-warning">Sorry, but we couldn't find the page that you're looking for.</div>
       <p>This could have happened for a few reasons:</p>
       <ul>
         <li>You may have followed an outdated link.</li>
