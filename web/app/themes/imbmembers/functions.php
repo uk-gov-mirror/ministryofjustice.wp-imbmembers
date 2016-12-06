@@ -23,7 +23,8 @@ $sage_includes = [
   'lib/nav.php',                   // Custom nav modifications
   'lib/gallery.php',               // Custom [gallery] modifications
   'lib/extras.php',                // Custom functions
-  'lib/comments.php',              // Commenting functionality
+  'lib/comments.php',              // Disable comments and pingbacks
+  'lib/taxonomies.php',            // Configure post taxonomies
   'lib/login.php',                 // Changes to login functionality
 ];
 

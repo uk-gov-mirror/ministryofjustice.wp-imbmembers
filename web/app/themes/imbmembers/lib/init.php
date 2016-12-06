@@ -28,8 +28,6 @@ function setup() {
   // http://codex.wordpress.org/Function_Reference/set_post_thumbnail_size
   // http://codex.wordpress.org/Function_Reference/add_image_size
   add_theme_support('post-thumbnails');
-//  add_image_size( 'image-thumb', 420, 236, true );
-//  add_image_size( 'image-large', 630, 254, true );
   add_image_size('thumbnail', 200, 200, true);
   add_image_size('thumbnail-2x', 400, 400, true);
 
