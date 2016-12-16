@@ -2,6 +2,7 @@
   "dependencies": {
     "main.js": {
       "files": [
+        "scripts/components/*.js",
         "scripts/main.js"
       ],
       "main": true
@@ -11,11 +12,6 @@
         "styles/main.less"
       ],
       "main": true
-    },
-    "wp-login.css": {
-      "files": [
-        "styles/wp-login.less"
-      ]
     },
     "editor-style.css": {
       "files": [
@@ -30,6 +26,6 @@
     }
   },
   "config": {
-    "devUrl": "knowthething.dev"
+    "devUrl": "imbmembers.dev"
   }
 }

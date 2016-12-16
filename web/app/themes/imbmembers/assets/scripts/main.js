@@ -23,6 +23,18 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
+
+        new TreeNav({
+          tree: $('.tree'),
+          animateSpeed: 150
+        });
+
+        $('.sidebar-toggle').on('click', function(e) {
+          e.preventDefault();
+          $(this).toggleClass('open');
+          $('.sidebar').toggleClass('visible');
+          $('body').toggleClass('no-scroll');
+        });
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
@@ -79,75 +91,3 @@
   $(document).ready(UTIL.loadEvents);
 
 })(jQuery); // Fully reference jQuery after this point.
-
-jQuery(document).ready(function($) {
-
-  var ajaxurl = typeof SageJS !== 'undefined' ? SageJS.ajaxurl : "nothing";
-
-  $('#summernote').summernote({
-    height: 300,
-    toolbar: [
-      ['style', ['bold', 'italic', 'underline']],
-      ['para', ['ul', 'ol', 'paragraph']],
-      ['insert', ['picture', 'link', 'video']], // Fix video
-    ],
-    onImageUpload: function(files) {
-      for (i = 0; i < files.length; i++) {
-        uploadImage(files[i], this);
-      }
-    }
-  });
-
-  var uploadImage = function(file, editor) {
-    data = new FormData();
-    data.append("file", file);
-    data.append('action', 'image_upload');
-    $.ajax({
-      data: data,
-      type: "POST",
-      url: ajaxurl,
-      cache: false,
-      contentType: false,
-      processData: false,
-      success: function(url) {
-        $(editor).summernote('editor.insertImage', url);
-      }
-    });
-  };
-
-  $('.modal-submit').click(function() {
-    if($('.add-modal .entry-form:visible').hasClass('standard')) {
-      $('textarea[name="content"]').html($('#summernote').code());
-    }
-    $('.add-modal .entry-form .data_form').submit();
-  });
-
-  $('.add-modal .entry-form form').submit(function( event ) {
-    $('.modal-submit').prop("disabled", true);
-    $('.modal-submit').html('Submitting...');
-    $('#error').hide();
-    var form = $(this)[0];
-    var fd = new FormData(form);
-    fd.append('action', 'submit_form');
-
-    $.ajax({
-      url: ajaxurl,
-      type: "POST",
-      data: fd,
-      processData: false,
-      contentType: false,
-      success: function(data) {
-        //console.log(data);
-        window.location.href = data;
-      },
-      error: function(data) {
-        $('#error').show();
-        $('.modal-submit').prop("disabled", false);
-        $('.modal-submit').html('Submit');
-      }
-    });
-
-    event.preventDefault();
-  });
-
-});

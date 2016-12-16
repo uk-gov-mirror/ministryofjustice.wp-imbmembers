@@ -3,6 +3,7 @@
 namespace Roots\Sage\Init;
 
 use Roots\Sage\Assets;
+use Roots\Sage\Users\UserRoles;
 
 /**
  * Theme setup
@@ -27,14 +28,8 @@ function setup() {
   // http://codex.wordpress.org/Function_Reference/set_post_thumbnail_size
   // http://codex.wordpress.org/Function_Reference/add_image_size
   add_theme_support('post-thumbnails');
-  add_image_size( 'image-thumb', 420, 236, true );
-  add_image_size( 'image-large', 630, 254, true );
-
-
-
-  // Add post formats
-  // http://codex.wordpress.org/Post_Formats
-  add_theme_support('post-formats', ['aside', 'gallery', 'link', 'image', 'quote', 'video', 'audio']);
+  add_image_size('thumbnail', 200, 200, true);
+  add_image_size('thumbnail-2x', 400, 400, true);
 
   // Add HTML5 markup for captions
   // http://codex.wordpress.org/Function_Reference/add_theme_support#HTML5
@@ -46,25 +41,6 @@ function setup() {
 add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
 
 /**
- * Register sidebars
+ * Define user roles
  */
-function widgets_init() {
-  register_sidebar([
-    'name'          => __('Primary', 'sage'),
-    'id'            => 'sidebar-primary',
-    'before_widget' => '<section class="widget %1$s %2$s">',
-    'after_widget'  => '</section>',
-    'before_title'  => '<h3>',
-    'after_title'   => '</h3>'
-  ]);
-
-  register_sidebar([
-    'name'          => __('Footer', 'sage'),
-    'id'            => 'sidebar-footer',
-    'before_widget' => '<section class="widget %1$s %2$s">',
-    'after_widget'  => '</section>',
-    'before_title'  => '<h3>',
-    'after_title'   => '</h3>'
-  ]);
-}
-add_action('widgets_init', __NAMESPACE__ . '\\widgets_init');
+new UserRoles();

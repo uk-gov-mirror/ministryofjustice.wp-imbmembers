@@ -9,34 +9,14 @@
   "dependencies": {
     "modernizr": "2.8.2",
     "jquery": "1.11.2",
-    "bootstrap": "3.3.2",
-    "summernote": "~0.6.1"
+    "bootstrap": "3.3.2"
   },
   "overrides": {
     "modernizr": {
       "main": "./modernizr.js"
     },
-    "summernote": {
-      "main": [
-        "./dist/summernote.js",
-        "./src/less/summernote.less"
-      ]
-    },
     "bootstrap": {
       "main": [
-        "./less/bootstrap.less",
-        "./js/transition.js",
-        "./js/alert.js",
-        "./js/button.js",
-        "./js/carousel.js",
-        "./js/collapse.js",
-        "./js/dropdown.js",
-        "./js/modal.js",
-        "./js/tooltip.js",
-        "./js/popover.js",
-        "./js/scrollspy.js",
-        "./js/tab.js",
-        "./js/affix.js",
         "./fonts/glyphicons-halflings-regular.eot",
         "./fonts/glyphicons-halflings-regular.svg",
         "./fonts/glyphicons-halflings-regular.ttf",
@@ -64,12 +44,6 @@
         "./assets/fonts/bootstrap/glyphicons-halflings-regular.ttf",
         "./assets/fonts/bootstrap/glyphicons-halflings-regular.woff",
         "./assets/fonts/bootstrap/glyphicons-halflings-regular.woff2"
-      ]
-    },
-    "font-awesome": {
-      "main": [
-        "./less/font-awesome.less",
-        "./fonts/*"
       ]
     }
   }

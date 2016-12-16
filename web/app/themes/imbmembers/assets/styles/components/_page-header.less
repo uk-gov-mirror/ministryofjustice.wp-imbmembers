@@ -1,6 +1,10 @@
 .page-header {
   display: block;
-  background: #ddd;
-  padding: 15px;
   margin: 0;
+  border: 0;
+  padding: 15px;
+  max-width: @content-max-width;
+  @media (min-width: @screen-md-min) {
+    padding: 15px 25px;
+  }
 }

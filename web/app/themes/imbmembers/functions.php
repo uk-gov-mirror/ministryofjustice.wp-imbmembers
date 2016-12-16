@@ -11,6 +11,8 @@
  */
 $sage_includes = [
   'lib/utils.php',                 // Utility functions
+  'lib/Nav/Walkers/TreeNavWalker.php', // Tree Nav Walker class
+  'lib/Users/UserRoles.php',       // MOJ User Roles
   'lib/init.php',                  // Initial theme setup and constants
   'lib/wrapper.php',               // Theme wrapper class
   'lib/conditional-tag-check.php', // ConditionalTagCheck class
@@ -20,9 +22,9 @@ $sage_includes = [
   'lib/nav.php',                   // Custom nav modifications
   'lib/gallery.php',               // Custom [gallery] modifications
   'lib/extras.php',                // Custom functions
-  'lib/users/oauth.php',           // Google oAuth login
-  'lib/users/login.php',           // User login
-  'lib/users/registration.php',    // User registration
+  'lib/comments.php',              // Disable comments and pingbacks
+  'lib/taxonomies.php',            // Configure post taxonomies
+  'lib/login.php',                 // Changes to login functionality
 ];
 
 foreach ($sage_includes as $file) {

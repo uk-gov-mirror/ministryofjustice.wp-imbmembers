@@ -1,29 +1,15 @@
 .sidebar {
   background: @bg-secondary;
-  padding: 10px 20px;
+  padding: 10px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  box-shadow: 5px 0 10px rgba(0, 0, 0, 0.3);
 
   .widget {
     padding: 10px 0;
-    color:#fff;
+    color: #fff;
     h3 {
       color: #fff;
-    }
-  }
-}
-
-/* Small devices (tablets, 768px and up) */
-@media (min-width: @screen-sm-min) {
-  .sidebar {
-    display: flex;
-    flex-direction: column;
-
-    .widget {
-      flex: 0 0 auto;
-    }
-    .widget_archives {
-      flex: 1 1 auto;
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
     }
   }
 }
