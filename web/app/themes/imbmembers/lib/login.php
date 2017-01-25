@@ -5,6 +5,8 @@
  */
 namespace Roots\Sage\Login;
 
+use Roots\Sage\Utils;
+
 /**
  * Custom scripts and styles for login pages
  */
@@ -103,13 +105,22 @@ add_filter( 'login_headertitle', __NAMESPACE__ . '\\login_header_link_title' );
  * Redirect to login screen if they're not authenticated
  */
 function require_login() {
-  if (!is_user_logged_in() && !is_login_page()) {
+  if (is_login_required() && !is_user_logged_in()) {
     $redirectAfterLogin = $_SERVER['REQUEST_URI'];
     $redirectTo = wp_login_url($redirectAfterLogin);
     header('Location: ' . $redirectTo); exit();
   }
 }
 add_action('init', __NAMESPACE__ . '\\require_login');
+
+/**
+ * Should the user be authenticated to see this page?
+ *
+ * @return boolean
+ */
+function is_login_required() {
+  return !(Utils\is_wp_cli() || is_login_page());
+}
 
 /**
  * Convenience method to determine if we're on a login page.

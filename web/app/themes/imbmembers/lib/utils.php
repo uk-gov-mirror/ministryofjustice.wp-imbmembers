@@ -66,3 +66,12 @@ function human_date($date) {
     return human_time_diff($date->getTimestamp()) . ' ago';
   }
 }
+
+/**
+ * Detect if we're running under WP-CLI.
+ *
+ * @return boolean
+ */
+function is_wp_cli() {
+  return defined('WP_CLI') && WP_CLI;
+}

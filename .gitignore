@@ -37,3 +37,6 @@ bin
 
 # PhpStorm
 .idea
+
+# AWS CloudFormation stacks
+cloudformation-stacks/
