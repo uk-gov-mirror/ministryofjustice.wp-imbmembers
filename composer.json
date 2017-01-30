@@ -37,6 +37,10 @@
     {
       "type": "composer",
       "url": "https://wpackagist.org"
+    },
+    {
+      "type": "composer",
+      "url": "https://composer.wp.dsd.io"
     }
   ],
   "require": {
@@ -46,7 +50,8 @@
     "johnpbloch/wordpress": "4.7.*",
     "roots/soil": "3.0.3",
     "wpackagist-plugin/wp-nested-pages": "1.6.5.2",
-    "wpackagist-plugin/breadcrumb-trail": "1.0.0"
+    "wpackagist-plugin/breadcrumb-trail": "1.0.0",
+    "ministryofjustice/wp-rewrite-media-to-s3": "^0.1.0"
   },
   "extra": {
     "installer-paths": {
