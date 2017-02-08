@@ -1,3 +1,11 @@
+<?php
+
+if (is_front_page()) {
+  get_template_part('templates/quick-links');
+}
+
+?>
+
 <?php get_template_part('templates/page-header'); ?>
 
 <?php if (!have_posts()) : ?>
