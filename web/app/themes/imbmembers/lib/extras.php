@@ -7,8 +7,11 @@ use Roots\Sage\Config;
 /**
  * Don't show admin bar for subscribers.
  */
-function show_admin_bar() {
-  return current_user_can('edit_posts');
+function show_admin_bar($show) {
+  if (!current_user_can('edit_posts')) {
+    $show = false;
+  }
+  return $show;
 }
 add_filter('show_admin_bar', __NAMESPACE__ . '\\show_admin_bar');
 
