@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "fontello",
   "css_prefix_text": "icon-",
   "css_use_suffix": false,
   "hinting": true,
@@ -22,18 +22,6 @@
       "uid": "693e13611b84512c92e6115e0c31934d",
       "css": "address-book-o",
       "code": 62138,
-      "src": "fontawesome"
-    },
-    {
-      "uid": "ccc2329632396dc096bb638d4b46fb98",
-      "css": "mail-alt",
-      "code": 61664,
-      "src": "fontawesome"
-    },
-    {
-      "uid": "8c0ffa714cecbf5144e022d9c3df4a1f",
-      "css": "bank",
-      "code": 61852,
       "src": "fontawesome"
     },
     {

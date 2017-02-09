@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b17d1460842aeda0b2d0745932d11165",
+    "content-hash": "d49d23771488559025d2275e4a593291",
     "packages": [
         {
             "name": "composer/installers",
@@ -334,6 +334,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/breadcrumb-trail/"
+        },
+        {
+            "name": "wpackagist-plugin/menu-icons",
+            "version": "0.10.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/menu-icons/",
+                "reference": "tags/0.10.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/menu-icons.0.10.2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/menu-icons/"
         },
         {
             "name": "wpackagist-plugin/wp-nested-pages",

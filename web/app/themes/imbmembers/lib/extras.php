@@ -136,3 +136,46 @@ function make_breadcrumbs_bootstrap($html) {
   return $html;
 }
 add_filter('breadcrumb_trail', __NAMESPACE__ . '\\make_breadcrumbs_bootstrap');
+
+/**
+ * Don't include Menu Icon styles unless on the front page
+ */
+function dequeue_menu_icons_unless_front_page() {
+  if (!is_front_page()) {
+    wp_dequeue_style('pack-fontello');
+    wp_dequeue_style('menu-icons-extra');
+  }
+}
+add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\dequeue_menu_icons_unless_front_page');
+
+/**
+ * Disable menu icons for a menu
+ *
+ * @param array $menu_settings Menu Settings.
+ * @param int   $menu_id       Menu ID.
+ *
+ * @return array
+ */
+function menu_icons_menu_settings($menu_settings, $menu_id) {
+  $locations = get_nav_menu_locations();
+  if (!isset($locations['quick_links']) || $locations['quick_links'] != $menu_id) {
+    $menu_settings['disabled'] = true;
+  }
+
+  return $menu_settings;
+}
+add_filter('menu_icons_menu_settings', __NAMESPACE__ . '\\menu_icons_menu_settings', 10, 2);
+
+/**
+ * Disable Menu Icons settings metabox for non-admin users.
+ *
+ * @param bool $disable
+ * @return bool
+ */
+function menu_icons_disable_settings_metabox($disable) {
+  if (!current_user_can('manage_options')) {
+    $disable = true;
+  }
+  return $disable;
+}
+add_filter('menu_icons_disable_settings', __NAMESPACE__ . '\\menu_icons_disable_settings_metabox');

@@ -11,6 +11,7 @@
  */
 $sage_includes = [
   'lib/utils.php',                 // Utility functions
+  'lib/Nav/Walkers/ButtonNavWalker.php', // Button Nav Walker class
   'lib/Nav/Walkers/TreeNavWalker.php', // Tree Nav Walker class
   'lib/Users/UserRoles.php',       // MOJ User Roles
   'lib/init.php',                  // Initial theme setup and constants
