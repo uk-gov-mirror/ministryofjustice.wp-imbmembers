@@ -26,6 +26,6 @@
     }
   },
   "config": {
-    "devUrl": "imbmembers.dev"
+    "devUrl": "imbmembers.docker"
   }
 }

@@ -1,8 +1,18 @@
+<?php
+
+if (is_front_page()) {
+  get_template_part('templates/quick-links');
+}
+
+?>
+
 <?php get_template_part('templates/page-header'); ?>
 
 <?php if (!have_posts()) : ?>
-  <div class="alert alert-warning">
-    <?php _e('Sorry, no results were found.', 'sage'); ?>
+  <div class="entry">
+    <div class="alert alert-warning">
+      <?php _e('Sorry, no results were found.', 'sage'); ?>
+    </div>
   </div>
 <?php endif; ?>
 
