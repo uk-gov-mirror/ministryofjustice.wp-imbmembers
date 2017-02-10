@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d49d23771488559025d2275e4a593291",
+    "content-hash": "2d5190690cb8699aa5ad8e081c199c96",
     "packages": [
         {
             "name": "composer/installers",
@@ -336,6 +336,26 @@
             "homepage": "https://wordpress.org/plugins/breadcrumb-trail/"
         },
         {
+            "name": "wpackagist-plugin/google-analytics-dashboard-for-wp",
+            "version": "4.9.6.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/google-analytics-dashboard-for-wp/",
+                "reference": "tags/4.9.6.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/google-analytics-dashboard-for-wp.4.9.6.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/google-analytics-dashboard-for-wp/"
+        },
+        {
             "name": "wpackagist-plugin/menu-icons",
             "version": "0.10.2",
             "source": {
@@ -346,7 +366,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/menu-icons.0.10.2.zip",
-                "reference": null,
+                "reference": "tags/0.10.2",
                 "shasum": null
             },
             "require": {
