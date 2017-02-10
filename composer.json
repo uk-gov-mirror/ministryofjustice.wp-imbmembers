@@ -52,7 +52,8 @@
     "wpackagist-plugin/wp-nested-pages": "1.6.5.2",
     "wpackagist-plugin/breadcrumb-trail": "1.0.0",
     "ministryofjustice/wp-rewrite-media-to-s3": "^0.1.0",
-    "wpackagist-plugin/menu-icons": "^0.10.2"
+    "wpackagist-plugin/menu-icons": "^0.10.2",
+    "wpackagist-plugin/google-analytics-dashboard-for-wp": "4.9.6.1"
   },
   "extra": {
     "installer-paths": {
