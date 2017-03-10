@@ -9,9 +9,6 @@
 # Clean up the working directory (useful when building from local dev files)
 git clean -xdf
 
-# Install PHP dependencies (WordPress, plugins, etc.)
-composer install
-
 # Add composer auth file
 if [ ! -z $COMPOSER_USER ] && [ ! -z $COMPOSER_PASS ]
 then
@@ -26,6 +23,9 @@ then
 		}
 	EOF
 fi
+
+# Install PHP dependencies (WordPress, plugins, etc.)
+composer install
 
 # Build theme assets
 cd web/app/themes/imbmembers
