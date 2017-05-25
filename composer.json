@@ -54,11 +54,11 @@
     "johnpbloch/wordpress": "~4.7.2",
     "koodimonni-language/core-en_gb": "~4.7.2",
     "roots/soil": "3.0.3",
-    "wpackagist-plugin/wp-nested-pages": "1.6.5.2",
+    "wpackagist-plugin/wp-nested-pages": "^1.7",
     "wpackagist-plugin/breadcrumb-trail": "1.0.0",
     "ministryofjustice/wp-rewrite-media-to-s3": "^0.1.0",
     "wpackagist-plugin/menu-icons": "^0.10.2",
-    "wpackagist-plugin/google-analytics-dashboard-for-wp": "4.9.6.2"
+    "wpackagist-plugin/google-analytics-dashboard-for-wp": "^5"
   },
   "extra": {
     "installer-paths": {
