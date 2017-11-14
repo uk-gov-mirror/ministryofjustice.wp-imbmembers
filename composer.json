@@ -51,14 +51,14 @@
     "php": ">=5.4",
     "composer/installers": "~1.0.12",
     "vlucas/phpdotenv": "~1.0.9",
-    "johnpbloch/wordpress": "~4.7.2",
-    "koodimonni-language/core-en_gb": "~4.7.2",
+    "johnpbloch/wordpress": "*",
+    "koodimonni-language/core-en_gb": "*",
     "roots/soil": "3.0.3",
-    "wpackagist-plugin/wp-nested-pages": "^1.7",
-    "wpackagist-plugin/breadcrumb-trail": "1.0.0",
+    "wpackagist-plugin/wp-nested-pages": "*",
+    "wpackagist-plugin/breadcrumb-trail": "*",
     "ministryofjustice/wp-rewrite-media-to-s3": "^0.1.0",
-    "wpackagist-plugin/menu-icons": "^0.10.2",
-    "wpackagist-plugin/google-analytics-dashboard-for-wp": "^5"
+    "wpackagist-plugin/menu-icons": "*",
+    "wpackagist-plugin/google-analytics-dashboard-for-wp": "*"
   },
   "extra": {
     "installer-paths": {
