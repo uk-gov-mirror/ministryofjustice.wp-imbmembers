@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7d08f94053af63e774e4a5b201340556",
+    "content-hash": "3fc26b0e3f2d27f1457ac4d39b48e8e1",
     "packages": [
         {
             "name": "composer/installers",
@@ -308,9 +308,9 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://composer.wp.dsd.io/dist/ministryofjustice-wp-rewrite-media-to-s3-8c9c6fee624787ccc14ecd22ddfc5e73f456be81-zip-c4ed0a.zip",
+                "url": "https://composer.wp.dsd.io/dist/ministryofjustice/wp-rewrite-media-to-s3/ministryofjustice-wp-rewrite-media-to-s3-8c9c6fee624787ccc14ecd22ddfc5e73f456be81-zip-c4ed0a.zip",
                 "reference": "8c9c6fee624787ccc14ecd22ddfc5e73f456be81",
-                "shasum": "d7a488f9de4204e009c84cd5cf336494dd0bd3f0"
+                "shasum": "e3904039460079ce4168e577fc31d0818407efb7"
             },
             "require": {
                 "composer/installers": "^1.0"
@@ -461,6 +461,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/google-analytics-dashboard-for-wp/"
+        },
+        {
+            "name": "wpackagist-plugin/import-users-from-csv-with-meta",
+            "version": "1.10.9.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/import-users-from-csv-with-meta/",
+                "reference": "tags/1.10.9.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/import-users-from-csv-with-meta.1.10.9.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/import-users-from-csv-with-meta/"
         },
         {
             "name": "wpackagist-plugin/menu-icons",
