@@ -1,7 +1,4 @@
 version: 0.1
-environment_variables:
-  plaintext:
-    APPNAME: "imbmembers"
 phases:
   pre_build:
     commands:
