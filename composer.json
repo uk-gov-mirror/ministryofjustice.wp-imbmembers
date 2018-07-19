@@ -66,5 +66,13 @@
       "web/app/languages/themes/": ["vendor:koodimonni-theme-language"]
     },
     "wordpress-install-dir": "web/wp"
+  },
+  "scripts": {
+    "test": [
+      "vendor/bin/phpcs"
+    ]
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.3"
   }
 }

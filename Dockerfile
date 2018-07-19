@@ -7,6 +7,10 @@ WORKDIR /bedrock
 ARG COMPOSER_USER
 ARG COMPOSER_PASS
 
-RUN chmod +x build.sh && \
-	sleep 1 && \
-	./build.sh
+# Set execute bit permissions before running build scripts
+RUN chmod +x bin/* && sleep 1 && \
+    make deep-clean && \
+    bin/composer-auth.sh && \
+    npm install -g bower gulp-cli && echo "{ \"allow_root\": true }" > /root/.bowerrc && \
+    make build && \
+    rm -f auth.json
