@@ -29,3 +29,6 @@ web/app/themes/imbmembers/dist
 web/app/themes/imbmembers/bower_components
 web/app/themes/imbmembers/node_modules
 web/app/themes/imbmembers/npm-debug.log
+
+# Database dumps
+*.sql
