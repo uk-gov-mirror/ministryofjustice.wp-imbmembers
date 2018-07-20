@@ -39,6 +39,9 @@ default:
         admin:
           username: admin
           password: password
+        subscriber:
+          username: subscriber
+          password: password
       database:
         restore_after_test: true
       wpcli:
