@@ -69,7 +69,8 @@
   },
   "scripts": {
     "test": [
-      "vendor/bin/phpcs"
+      "vendor/bin/phpcs",
+      "vendor/bin/behat"
     ]
   },
   "require-dev": {
