@@ -1,4 +1,5 @@
-<?php while (have_posts()) : the_post(); ?>
+<?php while (have_posts()) :
+    the_post(); ?>
   <article <?php post_class('entry'); ?>>
     <div class="entry-wrapper">
       <header>

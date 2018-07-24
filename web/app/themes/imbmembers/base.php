@@ -25,8 +25,8 @@ use Roots\Sage\Wrapper;
           </aside><!-- /.sidebar -->
         <?php endif; ?>
         <main class="main" role="main">
-          <?php get_template_part('templates/breadcrumbs'); ?>
-          <?php include Wrapper\template_path(); ?>
+            <?php get_template_part('templates/breadcrumbs'); ?>
+            <?php include Wrapper\template_path(); ?>
         </main><!-- /.main -->
       </div><!-- /.content -->
     </div><!-- /.wrap -->

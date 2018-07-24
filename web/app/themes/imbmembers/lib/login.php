@@ -10,8 +10,9 @@ use Roots\Sage\Utils;
 /**
  * Custom scripts and styles for login pages
  */
-function login_head() {
-  ?>
+function login_head()
+{
+    ?>
   <style>
     /* Login header logo */
     #login h1 a, .login h1 a {
@@ -39,15 +40,16 @@ function login_head() {
       }
     });
   </script>
-  <?php
+    <?php
 }
 add_action('login_head', __NAMESPACE__ . '\\login_head');
 
 /**
  * Add jQuery to login pages
  */
-function enqueue_jquery() {
-  wp_enqueue_script('jquery');
+function enqueue_jquery()
+{
+    wp_enqueue_script('jquery');
 }
 add_action('login_enqueue_scripts', __NAMESPACE__ . '\\enqueue_jquery');
 
@@ -55,34 +57,36 @@ add_action('login_enqueue_scripts', __NAMESPACE__ . '\\enqueue_jquery');
  * Rename form fields
  * This is done to replace references to 'username' with 'email address'.
  */
-function login_form() {
-  add_filter('gettext', __NAMESPACE__ . '\\login_form_gettext', 20, 3);
+function login_form()
+{
+    add_filter('gettext', __NAMESPACE__ . '\\login_form_gettext', 20, 3);
 }
 add_action('login_form_login', __NAMESPACE__ . '\\login_form');
 add_action('login_form_register', __NAMESPACE__ . '\\login_form');
 add_action('login_form_lostpassword', __NAMESPACE__ . '\\login_form');
 add_action('login_form_retrievepassword', __NAMESPACE__ . '\\login_form');
 
-function login_form_gettext($translated_text, $text, $domain) {
-  switch ($translated_text) {
-    case 'Email':
-      $translated_text = 'Email Address';
-      break;
+function login_form_gettext($translated_text, $text, $domain)
+{
+    switch ($translated_text) {
+        case 'Email':
+            $translated_text = 'Email Address';
+            break;
 
-    case 'Username or Email':
-      $translated_text = 'Email Address';
-      break;
+        case 'Username or Email':
+            $translated_text = 'Email Address';
+            break;
 
-    case '<strong>ERROR</strong>: Enter a username or email address.':
-      $translated_text = '<strong>ERROR</strong>: Enter an email address.';
-      break;
+        case '<strong>ERROR</strong>: Enter a username or email address.':
+            $translated_text = '<strong>ERROR</strong>: Enter an email address.';
+            break;
 
-    case 'Please enter your username or email address. You will receive a link to create a new password via email.':
-      $translated_text = 'Please enter your email address. You will receive a link to create a new password via email.';
-      break;
-  }
+        case 'Please enter your username or email address. You will receive a link to create a new password via email.':
+            $translated_text = 'Please enter your email address. You will receive a link to create a new password via email.';
+            break;
+    }
 
-  return $translated_text;
+    return $translated_text;
 }
 
 /**
@@ -90,26 +94,30 @@ function login_form_gettext($translated_text, $text, $domain) {
  *
  * @return string|void
  */
-function login_header_link() {
-  return home_url();
+function login_header_link()
+{
+    return home_url();
 }
 add_filter('login_headerurl', __NAMESPACE__ . '\\login_header_link');
 
-function login_header_link_title() {
-  return '';
+function login_header_link_title()
+{
+    return '';
 }
-add_filter( 'login_headertitle', __NAMESPACE__ . '\\login_header_link_title' );
+add_filter('login_headertitle', __NAMESPACE__ . '\\login_header_link_title');
 
 /**
  * Require users to be logged in before seeing the site
  * Redirect to login screen if they're not authenticated
  */
-function require_login() {
-  if (is_login_required() && !is_user_logged_in()) {
-    $redirectAfterLogin = $_SERVER['REQUEST_URI'];
-    $redirectTo = wp_login_url($redirectAfterLogin);
-    header('Location: ' . $redirectTo); exit();
-  }
+function require_login()
+{
+    if (is_login_required() && !is_user_logged_in()) {
+        $redirectAfterLogin = $_SERVER['REQUEST_URI'];
+        $redirectTo = wp_login_url($redirectAfterLogin);
+        header('Location: ' . $redirectTo);
+        exit();
+    }
 }
 add_action('init', __NAMESPACE__ . '\\require_login');
 
@@ -118,8 +126,9 @@ add_action('init', __NAMESPACE__ . '\\require_login');
  *
  * @return boolean
  */
-function is_login_required() {
-  return !(Utils\is_wp_cli() || is_login_page());
+function is_login_required()
+{
+    return !(Utils\is_wp_cli() || is_login_page());
 }
 
 /**
@@ -127,6 +136,7 @@ function is_login_required() {
  *
  * @return bool
  */
-function is_login_page() {
-  return in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php'));
+function is_login_page()
+{
+    return in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php'));
 }

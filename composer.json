@@ -77,5 +77,10 @@
     "paulgibbs/behat-wordpress-extension": "^2.0",
     "behat/mink-goutte-driver": "^1.2",
     "dmore/behat-chrome-extension": "^1.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "ImbMembers\\Features\\": "features/src/"
+    }
   }
 }
