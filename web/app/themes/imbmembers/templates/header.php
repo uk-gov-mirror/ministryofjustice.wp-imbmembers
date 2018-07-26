@@ -38,7 +38,7 @@ $user = wp_get_current_user();
                     </p>
                 </li>
                 <?php if (!is_null($changePassword)) : ?>
-                    <li><a href="<?= get_the_permalink($changePassword); ?>">Change Password</a></li>
+                    <li><a href="<?= get_the_permalink($changePassword); ?>"><?= get_the_title($changePassword) ?></a></li>
                 <?php endif; ?>
                 <li><a href="<?= wp_logout_url(); ?>">Logout</a></li>
             </ul>
