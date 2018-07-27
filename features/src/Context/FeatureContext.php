@@ -23,4 +23,19 @@ class FeatureContext extends RawWordpressContext implements SnippetAcceptingCont
     {
         parent::__construct();
     }
+
+    /**
+     * Reset the browser session and nagivate to the homepage after each scenario.
+     *
+     * Navigating to the homepage means the body element will no longer have a '.logged-in' class,
+     * which is used by \PaulGibbs\WordpressBehatExtension\Context\Traits\UserAwareContextTrait to
+     * determine if a user is logged in.
+     *
+     * @AfterScenario
+     */
+    public function resetSessionAndGoToHomepage()
+    {
+        $this->getSession()->reset();
+        $this->visitPath('/');
+    }
 }
