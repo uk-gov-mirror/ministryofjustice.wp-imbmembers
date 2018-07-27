@@ -32,6 +32,8 @@ class FeatureContext extends RawWordpressContext implements SnippetAcceptingCont
      * determine if a user is logged in.
      *
      * @AfterScenario
+     *
+     * @When I reset my session
      */
     public function resetSessionAndGoToHomepage()
     {

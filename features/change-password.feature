@@ -1,12 +1,32 @@
-Feature: Users can change their password
+@db @javascript
+Feature: Subscribers can change their password
   In order to keep my account secure
-  As a logged in user
+  As a logged in subscriber
   I can change my password using the frontend
 
   Background:
-    Given I am logged in as a subscriber
-    And I am on the homepage
+    Given there is a user:
+      | user_login | user_pass   | user_email        | role       |
+      | behat      | supersecret | behat@example.com | subscriber |
+    And I am logged in as behat
+    And I am on "/change-password/"
 
-  Scenario: I can access the 'Change Password' page
+  Scenario: A "Change My Password" link is available in the menu
     When I follow "Change My Password"
-    Then I should see "Change Your Account Password"
+    Then I should be on "/change-password/"
+
+  Scenario: I can change my password
+    When I fill in "Current Password" with "supersecret"
+    And I fill in "New Password" with "somethingelse"
+    And I press "Change Password"
+    Then I should see "Your password has been changed"
+    And I reset my session
+    Then I should not be able to log in as behat
+    # @TODO Test that I _can_ login with the new password
+
+  Scenario: I can't change my password if I don't know my current password
+    When I fill in "Current Password" with "thewrongpassword"
+    And I fill in "New Password" with "somethingelse"
+    And I press "Change Password"
+    Then I should see "Your password was not changed. Please check below for errors."
+    And I should see "Incorrect password"
