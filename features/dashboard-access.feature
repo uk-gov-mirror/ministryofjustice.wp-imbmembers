@@ -14,3 +14,13 @@ Feature: The WordPress dashboard is only accessible to admins
     Then the URL should match "^/$"
     And I should see "Latest News"
     And I should not see "Dashboard"
+
+  Scenario: Admins should see the admin toolbar on the frontend
+    Given I am logged in as an admin
+    When I go to the homepage
+    Then I should see the admin toolbar
+
+  Scenario: Subscribers should not see the admin toolbar
+    Given I am logged in as a subscriber
+    When I go to the homepage
+    Then I should not see the admin toolbar

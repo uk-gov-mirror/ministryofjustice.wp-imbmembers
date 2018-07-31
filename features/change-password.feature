@@ -1,4 +1,4 @@
-@db @javascript
+@db
 Feature: Subscribers can change their password
   In order to keep my account secure
   As a logged in subscriber
@@ -20,9 +20,6 @@ Feature: Subscribers can change their password
     And I fill in "New Password" with "somethingelse"
     And I press "Change Password"
     Then I should see "Your password has been changed"
-    And I reset my session
-    Then I should not be able to log in as behat
-    # @TODO Test that I _can_ login with the new password
 
   Scenario: I can't change my password if I don't know my current password
     When I fill in "Current Password" with "thewrongpassword"
