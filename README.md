@@ -20,9 +20,9 @@ Anonymous users cannot view the website – users must login before seeing conte
 - Docker & docker-compose - [Install](https://www.docker.com/docker-mac)
 - Dory (docker proxy for local development) - [Install](https://github.com/FreedomBen/dory)
 - To build CSS/JS assets locally, you'll also need:
-  - Node & npm (builds with node 5, although may work with newer versions)
-  - Bower
-  - Gulp
+  - node 10 – known to work on node v10.4.1 (npm v6.1.0)
+  - bower
+  - gulp
 
 ## Getting Started
 
@@ -70,7 +70,7 @@ Anonymous users cannot view the website – users must login before seeing conte
     You will need to run through the WordPress installation wizard in your browser.
 
     The WordPress admin area will be accessible at `/wp/wp-admin`.
-    
+
 ## Tests
 
 ### Code linting
@@ -101,11 +101,11 @@ vendor/bin/phpcbf
 2. Seed the database so that it's in the state expected by the test suite.
 
     **Warning!** This will reset your local database, so be sure to take a backup if you want to keep it.
-    
+
     ```
     docker-compose exec wordpress features/seed-database.sh
     ```
-    
+
     This command will execute the `features/seed-database.sh` script in the running docker container.
 3. Run the test suite with command:
 

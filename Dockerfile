@@ -1,5 +1,11 @@
 FROM mojdigital/wordpress-base:latest
 
+# Install node 10
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /var/tmp/* /init
+
 ADD . /bedrock
 
 WORKDIR /bedrock
