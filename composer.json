@@ -51,7 +51,8 @@
     "wpackagist-plugin/breadcrumb-trail": "*",
     "ministryofjustice/wp-rewrite-media-to-s3": "^0.1.0",
     "wpackagist-plugin/menu-icons": "*",
-    "wpackagist-plugin/google-analytics-dashboard-for-wp": "*"
+    "wpackagist-plugin/google-analytics-dashboard-for-wp": "*",
+    "wpackagist-plugin/classic-editor": "*"
   },
   "extra": {
     "installer-paths": {
