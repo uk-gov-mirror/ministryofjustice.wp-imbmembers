@@ -1,4 +1,4 @@
-FROM mojdigital/wordpress-base:latest
+FROM mojdigital/wordpress-base:upgrade
 
 # Install node 10
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
