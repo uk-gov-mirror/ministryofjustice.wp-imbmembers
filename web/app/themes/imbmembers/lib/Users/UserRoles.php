@@ -76,6 +76,7 @@ class UserRoles
         'list_users',
         'create_users',
         'edit_users',
+        'promote_users',
         'delete_users',
         'edit_theme_options',
         );
