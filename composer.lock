@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "591916e06d5725085d2b051af76136fe",
+    "content-hash": "d1abac842e3b44e9d82c468555e7791b",
     "packages": [
         {
             "name": "composer/installers",
@@ -108,20 +108,20 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "5.1.0",
+            "version": "5.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "bdb6632aea9872b7c71322c724a8acfc0ec9ee7f"
+                "reference": "b5673ea8f30a518eaf311c90f1d074c44b54e15e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/bdb6632aea9872b7c71322c724a8acfc0ec9ee7f",
-                "reference": "bdb6632aea9872b7c71322c724a8acfc0ec9ee7f",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/b5673ea8f30a518eaf311c90f1d074c44b54e15e",
+                "reference": "b5673ea8f30a518eaf311c90f1d074c44b54e15e",
                 "shasum": ""
             },
             "require": {
-                "johnpbloch/wordpress-core": "5.1.0",
+                "johnpbloch/wordpress-core": "5.1.1",
                 "johnpbloch/wordpress-core-installer": "^1.0",
                 "php": ">=5.3.2"
             },
@@ -143,27 +143,27 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2019-02-22T18:16:29+00:00"
+            "time": "2019-03-13T00:27:35+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "5.1.0",
+            "version": "5.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "07c57b738c9967e5643641a44e659b5851c066af"
+                "reference": "dba22982e7cb433b68f1b12a0bd4e5851f967010"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/07c57b738c9967e5643641a44e659b5851c066af",
-                "reference": "07c57b738c9967e5643641a44e659b5851c066af",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/dba22982e7cb433b68f1b12a0bd4e5851f967010",
+                "reference": "dba22982e7cb433b68f1b12a0bd4e5851f967010",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
             },
             "provide": {
-                "wordpress/core-implementation": "5.1.0"
+                "wordpress/core-implementation": "5.1.1"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -183,7 +183,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2019-02-22T18:16:24+00:00"
+            "time": "2019-03-13T00:27:30+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -236,10 +236,10 @@
         },
         {
             "name": "koodimonni-language/core-en_gb",
-            "version": "5.1",
+            "version": "5.1.1",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/core/5.1/en_GB.zip",
+                "url": "https://downloads.wordpress.org/translation/core/5.1.1/en_GB.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -328,6 +328,41 @@
                 "issues": "https://github.com/ministryofjustice/wp-rewrite-media-to-s3/issues"
             },
             "time": "2017-03-06T17:20:15+00:00"
+        },
+        {
+            "name": "ministryofjustice/wp-user-roles",
+            "version": "0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ministryofjustice/wp-user-roles.git",
+                "reference": "2f5e176a6b7977c0f396526d523df68c1fba6009"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://composer.wp.dsd.io/dist/ministryofjustice/wp-user-roles/ministryofjustice-wp-user-roles-2f5e176a6b7977c0f396526d523df68c1fba6009-zip-ebf40d.zip",
+                "reference": "2f5e176a6b7977c0f396526d523df68c1fba6009",
+                "shasum": "acd4e0d78ed502ed15ac09b5e26d476a0991ddfb"
+            },
+            "require": {
+                "composer/installers": "^1.0"
+            },
+            "type": "wordpress-plugin",
+            "authors": [
+                {
+                    "name": "Ollie Treend",
+                    "email": "ollie.treend@digital.justice.gov.uk"
+                },
+                {
+                    "name": "James Devon",
+                    "email": "james.devon@digital.justice.gov.uk"
+                }
+            ],
+            "description": "A WordPress plugin to create user roles typically required by a MOJDigital WordPress site",
+            "support": {
+                "source": "https://github.com/ministryofjustice/wp-user-roles/tree/0.1.1",
+                "issues": "https://github.com/ministryofjustice/wp-user-roles/issues"
+            },
+            "time": "2018-06-20T08:14:37+00:00"
         },
         {
             "name": "roots/soil",
@@ -461,6 +496,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/classic-editor/"
+        },
+        {
+            "name": "wpackagist-plugin/fast-user-switching",
+            "version": "1.4.8",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/fast-user-switching/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/fast-user-switching.zip?timestamp=1551360022",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/fast-user-switching/"
         },
         {
             "name": "wpackagist-plugin/google-analytics-dashboard-for-wp",
@@ -1687,16 +1742,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.4.0",
+            "version": "3.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "379deb987e26c7cd103a7b387aea178baec96e48"
+                "reference": "5b4333b4010625d29580eb4a41f1e53251be6baa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/379deb987e26c7cd103a7b387aea178baec96e48",
-                "reference": "379deb987e26c7cd103a7b387aea178baec96e48",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/5b4333b4010625d29580eb4a41f1e53251be6baa",
+                "reference": "5b4333b4010625d29580eb4a41f1e53251be6baa",
                 "shasum": ""
             },
             "require": {
@@ -1729,12 +1784,12 @@
                 }
             ],
             "description": "PHP_CodeSniffer tokenizes PHP, JavaScript and CSS files and detects violations of a defined set of coding standards.",
-            "homepage": "http://www.squizlabs.com/php-codesniffer",
+            "homepage": "https://github.com/squizlabs/PHP_CodeSniffer",
             "keywords": [
                 "phpcs",
                 "standards"
             ],
-            "time": "2018-12-19T23:57:18+00:00"
+            "time": "2019-03-19T03:22:27+00:00"
         },
         {
             "name": "symfony/browser-kit",

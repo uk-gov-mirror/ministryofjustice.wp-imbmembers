@@ -1,9 +1,9 @@
 const mix_ = require('laravel-mix');
 
 
-mix_.setPublicPath('./assets/')
-    .js('./assets/js/_main.js', 'js/scripts.min.js')
-    .sass('./assets/sass/main.scss', 'css/main.min.css')
+mix_.setPublicPath('./dist/')
+    .js(['./assets/assets/_main.js', './assets/js/'], 'js/scripts.min.js')
+    .sass('./assets/styles/main.scss', 'css/main.min.css')
     .browserSync();
 
 
