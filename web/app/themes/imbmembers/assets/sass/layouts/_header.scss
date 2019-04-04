@@ -1,0 +1,43 @@
+.banner {
+    background: $bg-primary;
+    border: none;
+    max-height: 50px;
+}
+
+.navbar-form {
+    border: 0;
+    box-shadow: none;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: #444;
+}
+
+.banner .navbar-brand {
+    @include media-breakpoint-up(sm) {
+        width: 260px;
+    }
+    @include media-breakpoint-up(md) {
+        width: 320px;
+    }
+}
+
+.sidebar-toggle {
+    display: block;
+    float: right;
+
+    @include media-breakpoint-up(sm) {
+        display: none;
+    }
+}
+
+.fixed-top {
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+body.admin-bar .fixed-top {
+    top: 32px;
+    @media (max-width: 782px) {
+        top: 46px;
+    }
+}

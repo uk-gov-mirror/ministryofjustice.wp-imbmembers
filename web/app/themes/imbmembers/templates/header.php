@@ -7,8 +7,8 @@ $user = wp_get_current_user();
 
 ?>
 
-<header class="banner navbar navbar-default navbar-fixed-top" role="banner">
-    <div class="container">
+<header class="banner fixed-top" role="banner">
+    <div class="container-fluid navbar-expand-lg navbar navbar-default navbar-static-top flex-wrap">
         <div class="navbar-header">
             <button type="button" class="sidebar-toggle menu-toggle">
                 <div class="menu-toggle__hamburger">

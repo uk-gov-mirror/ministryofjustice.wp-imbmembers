@@ -1,5 +1,5 @@
 <?php if (has_nav_menu('quick_links')) : ?>
-<div class="quick-links well">
+<div class="quick-links card card-body bg-light">
   <div class="quick-links-label">Quick links</div>
     <?php
 

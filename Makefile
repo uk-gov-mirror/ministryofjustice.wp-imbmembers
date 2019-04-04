@@ -5,7 +5,7 @@ build:
 	bin/build.sh
 
 # Remove ignored git files – e.g. composer dependencies and built theme assets
-# But keep .env file, .idea directory (PhpStorm config), and uploaded media files
+# But keep .idea directory (PhpStorm config), and uploaded media files
 clean:
 	@if [ -d ".git" ]; then git clean -xdf --exclude ".env" --exclude ".idea" --exclude "web/app/uploads"; fi
 

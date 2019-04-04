@@ -16,7 +16,6 @@ services:
       DB_USER: wordpress
       DB_PASSWORD: wordpress
       DB_HOST: mysql
-#      XDEBUG_CONFIG: remote_host=172.22.5.156
     depends_on:
       - mailcatcher
       - mysql

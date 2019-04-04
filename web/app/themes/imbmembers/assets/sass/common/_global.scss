@@ -1,0 +1,19 @@
+$line-height-computed: floor(($font-size-base * $line-height-base));
+
+body {
+    padding-top: 50px;
+    font-family: 'Open Sans', sans-serif;
+
+    &.no-scroll {
+        overflow: hidden;
+    }
+}
+
+.container {
+    width: 100%;
+}
+
+a {
+    color: #27ae60;
+    text-decoration: none;
+}

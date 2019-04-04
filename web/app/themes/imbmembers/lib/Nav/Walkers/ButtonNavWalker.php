@@ -9,7 +9,6 @@ use Walker_Nav_Menu;
  * Therefore, the relevant PHP CodeSniffer rule is disabled for this file.
  * phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps
  */
-
 class ButtonNavWalker extends Walker_Nav_Menu
 {
     public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)

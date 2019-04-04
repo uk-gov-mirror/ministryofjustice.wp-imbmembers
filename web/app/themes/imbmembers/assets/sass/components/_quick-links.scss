@@ -1,0 +1,22 @@
+.quick-links {
+  margin: 15px;
+  @include media-breakpoint-up(md) {
+    margin: 15px 25px;
+  }
+
+  .quick-links-label {
+    @extend .btn;
+    display: block;
+    font-weight: bold;
+    text-align: left;
+    cursor: default;
+
+    @include media-breakpoint-up(sm) {
+      display: inline-block;
+    }
+  }
+
+  i {
+    margin-right: 5px;
+  }
+}
