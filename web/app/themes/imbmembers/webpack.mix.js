@@ -10,6 +10,7 @@ mix_.setPublicPath('./dist/')
     .options({
         processCssUrls: false
     })
+    .copy('./node_modules/bootstrap/fonts/*', 'dist/fonts/')
     .js('./modernizr.js', 'dist/modernizr.min.js');
 
 if (mix_.inProduction()) {
