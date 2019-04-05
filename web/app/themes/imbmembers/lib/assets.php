@@ -101,37 +101,32 @@ function bower_map_to_cdn($dependency, $fallback)
 
 function assets()
 {
-    wp_enqueue_style('sage_css', asset_path('styles/main.css'), false, null);
-
-  /**
-   * Grab Google CDN's latest jQuery with a protocol relative URL; fallback to local if offline
-   * jQuery & Modernizr load in the footer per HTML5 Boilerplate's recommendation: http://goo.gl/nMGR7P
-   * If a plugin enqueues jQuery-dependent scripts in the head, jQuery will load in the head to meet the plugin's dependencies
-   * To explicitly load jQuery in the head, change the last wp_enqueue_script parameter to false
-   */
+    wp_enqueue_style('sage_css', asset_path('/main.min.css'), false, null);
+    /**
+     * Grab Google CDN's latest jQuery with a protocol relative URL; fallback to local if offline
+     * jQuery & Modernizr load in the footer per HTML5 Boilerplate's recommendation: http://goo.gl/nMGR7P
+     * If a plugin enqueues jQuery-dependent scripts in the head, jQuery will load in the head to meet the plugin's dependencies
+     * To explicitly load jQuery in the head, change the last wp_enqueue_script parameter to false
+     */
     if (!is_admin() && current_theme_supports('jquery-cdn')) {
-        wp_deregister_script('jquery');
-
+        /*wp_deregister_script('jquery');
         wp_register_script('jquery', bower_map_to_cdn([
         'name' => 'jquery',
         'cdn' => 'google',
         'file' => 'jquery.min.js'
         ], asset_path('scripts/jquery.js')), [], null, true);
-
         add_filter('script_loader_src', __NAMESPACE__ . '\\jquery_local_fallback', 10, 2);
+        wp_enqueue_script('jquery');*/
     }
-
     if (is_single() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
-
-    wp_enqueue_script('modernizr', asset_path('scripts/modernizr.js'), [], null, true);
-    wp_enqueue_script('jquery');
-    wp_enqueue_script('sage_js', asset_path('scripts/main.js'), [], null, true);
-
+    //wp_enqueue_script('modernizr', asset_path('/modernizr.min.js'), [], null, true);
+    wp_enqueue_script('sage_js', asset_path('/main.min.js'), ['jquery'], null, true);
     wp_localize_script('sage_js', 'SageJS', array('ajaxurl' => admin_url('admin-ajax.php')));
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
+
 
 // http://wordpress.stackexchange.com/a/12450
 function jquery_local_fallback($src, $handle = null)
