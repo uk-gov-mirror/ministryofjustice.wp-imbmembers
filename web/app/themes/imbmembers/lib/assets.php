@@ -108,15 +108,12 @@ function assets()
      * If a plugin enqueues jQuery-dependent scripts in the head, jQuery will load in the head to meet the plugin's dependencies
      * To explicitly load jQuery in the head, change the last wp_enqueue_script parameter to false
      */
-    if (!is_admin() && current_theme_supports('jquery-cdn')) {
-        /*wp_deregister_script('jquery');
-        wp_register_script('jquery', bower_map_to_cdn([
-        'name' => 'jquery',
-        'cdn' => 'google',
-        'file' => 'jquery.min.js'
-        ], asset_path('scripts/jquery.js')), [], null, true);
-        add_filter('script_loader_src', __NAMESPACE__ . '\\jquery_local_fallback', 10, 2);
-        wp_enqueue_script('jquery');*/
+    if (!is_admin()) {
+        wp_deregister_script('jquery');
+        wp_enqueue_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js', array(), '3.4.0', false);
+
+        wp_deregister_script('jquery-migrate');
+        wp_enqueue_script('jquery-migrate', '//code.jquery.com/jquery-migrate-3.0.1.min.js', ['jquery'], '3.0.1', false);
     }
     if (is_single() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
