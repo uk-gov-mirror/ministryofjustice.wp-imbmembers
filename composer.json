@@ -46,7 +46,7 @@
         }
     ],
     "require": {
-        "php": ">=5.4",
+        "php": ">=7.1",
         "composer/installers": "~1.0.12",
         "vlucas/phpdotenv": "~1.0.9",
         "johnpbloch/wordpress": "*",
@@ -59,7 +59,7 @@
         "wpackagist-plugin/google-analytics-dashboard-for-wp": "*",
         "wpackagist-plugin/classic-editor": "*",
         "wpackagist-plugin/fast-user-switching":"*",
-        "ministryofjustice/wp-moj-components": "*"
+        "ministryofjustice/wp-moj-components": "dev-master#b482250dfb80502838dab0aea4102784ceda19b8"
     },
     "extra": {
         "installer-paths": {
