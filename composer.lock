@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c3e4012867dbabfa392b4742a8eb422d",
+    "content-hash": "8e1961b9dd2d9f5a2cd98e0cc2144228",
     "packages": [
         {
             "name": "composer/installers",
@@ -304,12 +304,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ministryofjustice/wp-moj-components.git",
-                "reference": "122b781339b4cd72c06aa9bb8a402dda0a3147b2"
+                "reference": "b1f0361225a1c07cbc04edba11694b18e67c408b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ministryofjustice/wp-moj-components/zipball/122b781339b4cd72c06aa9bb8a402dda0a3147b2",
-                "reference": "122b781339b4cd72c06aa9bb8a402dda0a3147b2",
+                "url": "https://api.github.com/repos/ministryofjustice/wp-moj-components/zipball/b1f0361225a1c07cbc04edba11694b18e67c408b",
+                "reference": "b1f0361225a1c07cbc04edba11694b18e67c408b",
                 "shasum": ""
             },
             "require": {

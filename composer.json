@@ -59,7 +59,7 @@
         "wpackagist-plugin/google-analytics-dashboard-for-wp": "*",
         "wpackagist-plugin/classic-editor": "*",
         "wpackagist-plugin/fast-user-switching":"*",
-        "ministryofjustice/wp-moj-components": "dev-master#122b781339b4cd72c06aa9bb8a402dda0a3147b2"
+        "ministryofjustice/wp-moj-components": "dev-master#b1f0361225a1c07cbc04edba11694b18e67c408b"
     },
     "extra": {
         "installer-paths": {
