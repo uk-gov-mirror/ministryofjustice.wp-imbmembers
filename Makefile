@@ -6,6 +6,10 @@ build:
 clean:
 	@if [ -d ".git" ]; then git clean -xdf; fi
 
+# Remove ALL docker images on the system
+docker-clean:
+	bin/docker-clean.sh
+
 run:
 	docker-compose up
 
