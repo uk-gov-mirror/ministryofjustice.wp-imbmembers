@@ -13,9 +13,17 @@ clean:
 deep-clean:
 	@if [ -d ".git" ]; then git clean -xdf; fi
 
-# Run the application
 run:
+	cp .env.example .env
 	docker-compose up
+
+# Run the application
+down:
+	docker-compose down
+
+# Launch the application, open browser, no stdout
+run-launch:
+	bin/launch.sh
 
 # Open a bash shell on the running container
 bash:
