@@ -48,7 +48,7 @@
     "require": {
         "php": ">=7.1",
         "composer/installers": "*",
-        "vlucas/phpdotenv": "~1.0.9",
+        "vlucas/phpdotenv": "^2.0.1",
         "johnpbloch/wordpress": "*",
         "koodimonni-language/core-en_gb": "*",
         "roots/soil": ">=3.9.0",
